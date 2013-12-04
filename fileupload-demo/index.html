@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Ajax 上传文件</title>
+	<meta charset="utf-8" />
+
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/ajaxfileupload.js"></script>
+
+    <script type="text/javascript">
+        function uploadFile() {
+			$.ajaxFileUpload({  
+				url:'http://127.0.0.1:8080/struts2-demo/demo.action',
+                secureuri:false,
+                fileElementId:'myfile',
+				dataType: 'content',
+                success: function (data, status){
+					alert(data);
+					$('#result').html('添加成功');  
+                },  
+                error: function (data, status, e){  
+                    $('#result').html('添加失败');  
+                }
+			});
+        }
+    </script>
+</head>
+
+<body>
+	<input type="file" name="acc" id="myfile" />
+	<input type="button" onclick="uploadFile()" value="上传" />
+	<span id="result"></span>
+</body>
+</html>
