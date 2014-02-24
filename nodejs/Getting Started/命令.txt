@@ -1,0 +1,14 @@
+#测试node安装
+
+node --version
+
+#加载nodejs模块，使用npm(node package manager)
+npm install [模块名]
+
+如 npm install colors
+
+官网
+http://nodejs.org 下载，查模块api都在官网
+
+#部署命令
+node ***.js
